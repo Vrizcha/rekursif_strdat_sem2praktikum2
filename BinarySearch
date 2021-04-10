@@ -1,0 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file,  choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Windows 8.1
+ */
+public class BinarySearch {
+    public static int Binary(int [] a, int b, int c){
+        if(c < 0)//jika c kurang dari 0
+            return -1;//maka return -1
+        else if (a[c] ==b)//jika tidak maka (a[c] ==b)
+            return c;//retuern c
+        else//tidak
+            return Binary(a, b, c-1);//maka return Binary(a, b, c-1)   
+    }
+    public static int Caridata (int[] a, int b){//cari data
+         return Binary(a, b, a.length -1);//mereturn Binary (a, b, a.length -1)
+    }
+    public static void main(String[] args) {
+        int [] angka = {2, 5, 8, 10, 14, 32, 35, 41, 67, 88, 90, 101, 108};//pendeklarasian array
+        System.out.print("data: ");//menampilkan data`:
+        for (int i = 0; i < angka.length; i++)//melooping
+            System.out.print(" "+angka[i]);//mencetak (" "+angka[i])
+        System.out.println("\ndata yang dicari 10");//menampilkan data yang dicari 10
+        int nilai = Caridata(angka, 10);
+        if(nilai >= 0){//jika nilai lebih dari samadengan 0
+            System.out.println("data "+10+" ditemukan pada index ke "+nilai);//maka tampilkan data "+10+" ditemukan pada index ke "+nilai
+        }else{//jika tidak
+            System.out.println("Data tidak ditemukan ");//tampilkan Data tidak ditemukan
+        }
+    }   
+}
