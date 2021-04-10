@@ -1,0 +1,32 @@
+
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Windows 8.1
+ */
+public class MenaraHanoi {
+    public static void pindah(int disc, char pasak1,char pasak2, char Media){
+        if(disc == 0){//jika disc == 0
+            return;//mereturn
+        }else{
+            pindah(disc -1, pasak1, pasak2, Media);
+            //menampilkan Pindahkan disc "+disc+" dari pasak "+pasak1+" ke pasak "+pasak2
+            System.out.println("Pindahkan disc "+disc+" dari pasak "+pasak1+" ke pasak "+pasak2);
+            pindah(disc -1, Media, pasak2, pasak1);
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner (System.in);//scanner untuk input
+        System.out.println(" Jumlah disk: ");//menampilkan Jumlah disk:
+        int n = input.nextInt();//scanner untuk menginput
+        pindah(n, 'A', 'B', 'C');
+    }
+}
