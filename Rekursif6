@@ -1,0 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Windows 8.1
+ */
+public class Rekrusif6 {
+    public static void main(String[] args) {
+        System.out.println(test("01101", 4));
+    }
+    public static int test(String s, int last){
+        if(last < 0){//jika last kurang dari 0
+            return 0;//mereturn 0
+        }
+        if(s.charAt(last) == 0){
+            return 2 * test(s, last - 1);
+        }
+        return 1 + 2 * test(s,last-1);
+    }
+}
