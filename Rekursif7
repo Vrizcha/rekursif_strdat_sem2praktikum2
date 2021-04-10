@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Windows 8.1
+ */
+public class Rekrusif7 {
+    public static void main(String[] args) {
+        //pendeklarasian array
+        int[] myArray = {1, 2, 3, 4, 5, 6, 7, 78, 8};
+        
+        System.out.println(search(myArray, myArray.length, 100));
+    }
+    public static boolean search(int[] x, int size, int n){
+        if(size > 0){//jika size lebih dari 0
+            if(x[size-1]==n){
+                return true;
+            }else{
+                return search(x, size-1, n);
+            }
+        }
+        return false;
+    }
+}
+
+
