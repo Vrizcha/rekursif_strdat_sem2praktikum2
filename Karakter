@@ -1,0 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Windows 8.1
+ */
+public class Karakter {
+    public static void CharCombination(String a, int n){
+        if(n == 0)//jika n = 0
+            System.out.print(a + " ");// menampilkan a + ......
+        else// jika tidak
+            for(int i = 97; i < 99; i++)// loop
+                CharCombination(a+(char)i, n-1);
+    }
+    public static void main(String[] args) {
+        CharCombination("",2);//2 angka untuk ditampilkan masing-masing
+    }
+}
